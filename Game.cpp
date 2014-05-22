@@ -7,45 +7,40 @@ using namespace std;
 
 void game (char *inputWord)
 {
-    Word ob2(inputWord);
-
-    ob2.findLengthOfWord();
-    ob2.newWord();
+    Word word(inputWord);
+    word.findLengthOfWord();
+    word.newWord();
 
     int n=5;
-    for (int i=0; i<n && ob2.isWin(); i++)
+    for (int i=0; i<n && word.isWin(); i++)
     {
         system("cls");
-
-        ob2.outputWord();
+        word.outputWord();
         cout<<endl;
 
         char letter;
         cout<<"Enter the letter: ";
         cin>>letter;
 
-        if (ob2.searchLetter(letter))
+        if (word.searchLetter(letter))
         {
             system("cls");
-
-            ob2.insertLetter(letter);
-            ob2.outputWord();
+            word.insertLetter(letter);
+            word.outputWord();
             i--;
-            cout<<"You have "<<(n-1-i)<<" trials"<<endl<<endl;
+            cout<<endl<<"You have "<<(n-1-i)<<" trials"<<endl<<endl;
         }
         else
-            {
-                system("cls");
-
-                ob2.outputWord();
-                cout<<"You have "<<(n-1-i)<<" trials"<<endl<<endl;
-            }
+        {
+            system("cls");
+            word.outputWord();
+            cout<<endl<<"You have "<<(n-1-i)<<" trials"<<endl<<endl;
+        }
 
         system("pause");
     }
-
         system("cls");
-        if(!ob2.isWin())
+        if(!word.isWin())
             cout<<"   You won :)"<<endl<<endl;
         else
             cout<<"Word : "<<inputWord<<endl<<endl<<"   You lose :("<<endl<<endl;

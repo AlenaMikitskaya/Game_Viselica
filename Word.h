@@ -15,7 +15,6 @@ class Word
         bool searchLetter(char letter);
         bool isWin();
 
-
     private:
         Word (const Word &original);
         Word &operator=(const Word &rhs);
@@ -23,8 +22,6 @@ class Word
         const int N=15;
         char *word, *wordKey;
         int lengthOfWord;
-
-
 };
 
 #endif // WORD_H

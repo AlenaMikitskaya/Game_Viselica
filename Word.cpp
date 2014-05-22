@@ -1,6 +1,6 @@
-#include "Word.h"
 #include <cstring>
 #include <iostream>
+#include "Word.h"
 
 using namespace std;
 
@@ -44,9 +44,7 @@ void Word::insertLetter(char letter)
     for (int i=0; i<=lengthOfWord; i++)
     {
         if(wordKey[i]==letter)
-        {
             word[i]=letter;
-        }
     }
 }
 
@@ -56,9 +54,7 @@ bool Word::searchLetter(char letter)
     for (int i=0; i<=lengthOfWord; i++)
     {
         if(wordKey[i]==letter)
-        {
             k++;
-        }
     }
     if (k)
         return true;
@@ -72,9 +68,7 @@ bool Word::isWin()
     for (int i=0; i<=lengthOfWord; i++)
     {
         if(word[i]=='_')
-        {
             k++;
-        }
     }
     if (k)
         return true;
